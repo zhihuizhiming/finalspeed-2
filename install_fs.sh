@@ -129,16 +129,17 @@ function checkos(){
  
 #  Install finalspeed
 function install_finalspeed(){
-	rm -f $package_save_name
-	echo "Download software..."
-	if ! wget -O $package_save_name $package_download_url ; then
-		echo "Download software failed!"
+	#rm -f $package_save_name
+	echo "Find software..."
+	if  [[ ! -f $package_save_name ]]; then
+		echo "Find software failed!"
 		exit 1
 	fi
 
 	if [[ ! -d "$install_path" ]]; then
 		mkdir "$install_path"
-		else
+		echo "Install Software..."
+	else
 		echo "Update Software..."
 	fi
 	
